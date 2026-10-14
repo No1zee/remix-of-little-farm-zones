@@ -7,3 +7,4 @@
 - [x] Add the uploaded Zone 2 setup to Adventure Zone.
 - [x] Add the additional Zone 2 Adventure World image.
 - [x] Add the uploaded Creative Zone setup to Creative Zone.
+- [x] Add the uploaded Discovery World setup to Discovery World.
