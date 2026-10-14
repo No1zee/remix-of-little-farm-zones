@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useRouterState } from '@tanstack/react-router';
 import { ArrowRight, Baby, Castle, Palette, FlaskConical, Music2, Sprout, Heart, MapPin, Menu, X, Check, Sparkles } from 'lucide-react';
 import babyGarden from '@/assets/baby-garden.asset.json';
-import adventureZone from '@/assets/adventure-zone.asset.json';
+import adventureZone from '@/assets/adventure-world.asset.json';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
