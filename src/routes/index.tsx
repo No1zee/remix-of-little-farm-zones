@@ -1,24 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
-  component: Index,
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { ArrowRight, Sprout, Heart, Sparkles } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { ZoneCollection, ValueBand, FarmMap, BottomBanner } from '@/components/bambino';
+import farmPhoto from '@/assets/bambino-farm.jpg';
+export const Route = createFileRoute('/')({
+ head:()=>({meta:[{title:'BAMBINO World | A little world of big adventures'},{name:'description',content:'Discover BAMBINO World at The Little Farm: five playful zones for little explorers, creative minds and unforgettable family moments.'},{property:'og:title',content:'BAMBINO World | A little world of big adventures'},{property:'og:description',content:'Five worlds of play, discovery and celebration at The Little Farm.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}),
+ component:Index,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+function Index(){return <main><section className="hero"><img className="hero-photo" src={farmPhoto} width={1536} height={1024} alt="Children playing with colourful hoops and building blocks on a sunny farm lawn" fetchPriority="high"/><div className="hero-inner"><span className="eyebrow"><Sparkles size={15}/>Little people. Endless possibilities.</span><h1>BAMBINO World<span>.<br/>Little adventures.<br/>Big happy hearts.</span></h1><p>A world made for little explorers. Come play, create and discover beautiful moments together at The Little Farm.</p><div className="hero-actions"><Button asChild className="action-button"><Link to="/zones">Explore our play zones <ArrowRight/></Link></Button><Button asChild variant="outline" className="action-button hero-secondary"><Link to="/visit">Plan your visit</Link></Button></div><div className="hero-small"><span><Sprout/>Fresh air, full imaginations</span><span><Heart/>Made for family moments</span></div></div><div className="hero-sticker"><Sparkles size={19}/><span>5 happy zones.</span><strong>One big world.</strong></div></section><ValueBand/><section className="zones-band"><div className="section"><div className="section-heading"><span className="eyebrow">A little something for every little one</span><h2>Five zones. Endless ways to play.</h2><p>From first discoveries to big adventures, there’s a happy place for every curious mind.</p></div><ZoneCollection/></div></section><section className="section farm-preview"><div className="farm-copy"><span className="eyebrow"><Sprout size={15}/>Room to roam. Space to grow.</span><h2>A big little world.<br/>All at The Little Farm.</h2><p>Imagine 4,000 m² of play, colour and connection. Five distinct zones, with the Celebration Stage at the heart of it all.</p><Button asChild variant="outline" className="action-button"><Link to="/the-little-farm">Discover The Little Farm <ArrowRight/></Link></Button></div><FarmMap/></section><BottomBanner/></main>}
