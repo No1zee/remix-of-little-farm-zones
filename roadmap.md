@@ -3,3 +3,4 @@
 - [ ] Add a clearly proposed Little Farm layout and visit information.
 - [ ] Verify page navigation and mobile layout.
 - [ ] Add the actual venue coordinates and review the uploaded Baby Garden setup reference.
+- [ ] Include the uploaded aerial view on The Little Farm page.
