@@ -39,12 +39,19 @@ export type Database = {
         Row: {
           children: number
           created_at: string
+          ecocash_payer_number: string | null
+          ecocash_reference: string | null
           email: string | null
           estimated_total: number
           event_date: string
           id: string
           notes: string | null
+          paid_at: string | null
           parent_name: string
+          payment_method: string | null
+          payment_status: string
+          paynow_poll_url: string | null
+          paynow_reference: string | null
           phone: string
           ticket_type: string
           under_twos: number
@@ -52,12 +59,19 @@ export type Database = {
         Insert: {
           children: number
           created_at?: string
+          ecocash_payer_number?: string | null
+          ecocash_reference?: string | null
           email?: string | null
           estimated_total: number
           event_date: string
           id?: string
           notes?: string | null
+          paid_at?: string | null
           parent_name: string
+          payment_method?: string | null
+          payment_status?: string
+          paynow_poll_url?: string | null
+          paynow_reference?: string | null
           phone: string
           ticket_type: string
           under_twos?: number
@@ -65,12 +79,19 @@ export type Database = {
         Update: {
           children?: number
           created_at?: string
+          ecocash_payer_number?: string | null
+          ecocash_reference?: string | null
           email?: string | null
           estimated_total?: number
           event_date?: string
           id?: string
           notes?: string | null
+          paid_at?: string | null
           parent_name?: string
+          payment_method?: string | null
+          payment_status?: string
+          paynow_poll_url?: string | null
+          paynow_reference?: string | null
           phone?: string
           ticket_type?: string
           under_twos?: number
