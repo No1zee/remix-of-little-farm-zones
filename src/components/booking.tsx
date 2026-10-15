@@ -15,7 +15,7 @@ export const includes = ['Lunch & juice', 'Popcorn pack', 'Unlimited candyfloss'
 
 export function estimateTotal(base: number, children: number) {
   let total = base;
-  for (let i = 1; i < children; i++) total += siblingAddOns[Math.min(i - 1, siblingAddOns.length - 1)];
+  for (let i = 1; i < children; i++) total += siblingAddOns[Math.min(i - 1, siblingAddOns.length - 1)] ?? 0;
   return total;
 }
 
@@ -43,7 +43,7 @@ export function BookingForm() {
   async function submit(e: React.FormEvent) {
     e.preventDefault(); setError('');
     const parsed = schema.safeParse(form);
-    if (!parsed.success) { setError(parsed.error.issues[0].message); return; }
+    if (!parsed.success) { setError(parsed.error.issues[0]?.message ?? "Please check the form"); return; }
     setStatus('sending');
     const { error: dbError } = await supabase.from('ticket_bookings').insert({
       event_date: '2026-12-05', ticket_type: type, children, under_twos: underTwos, estimated_total: total,
