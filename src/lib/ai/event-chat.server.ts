@@ -10,7 +10,7 @@ function json(status: number, error: string) {
 }
 
 export async function handleEventChat(request: Request) {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env['LOVABLE_API_KEY'];
   if (!apiKey) return json(500, "The event helper isn't configured yet.");
 
   let body: { id?: unknown; messages?: unknown };
