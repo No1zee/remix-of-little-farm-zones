@@ -39,6 +39,8 @@ export type Database = {
         Row: {
           children: number
           created_at: string
+          ecocash_payer_number: string | null
+          ecocash_reference: string | null
           email: string | null
           estimated_total: number
           event_date: string
@@ -57,6 +59,8 @@ export type Database = {
         Insert: {
           children: number
           created_at?: string
+          ecocash_payer_number?: string | null
+          ecocash_reference?: string | null
           email?: string | null
           estimated_total: number
           event_date: string
@@ -75,6 +79,8 @@ export type Database = {
         Update: {
           children?: number
           created_at?: string
+          ecocash_payer_number?: string | null
+          ecocash_reference?: string | null
           email?: string | null
           estimated_total?: number
           event_date?: string
