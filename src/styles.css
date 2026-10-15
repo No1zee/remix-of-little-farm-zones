@@ -60,3 +60,20 @@
 .booking-card{background:var(--card);border:2px solid var(--border);border-radius:8px;padding:24px;box-shadow:var(--soft-shadow);display:grid;gap:16px}.booking-event{font-size:13px;color:var(--muted-foreground);margin:-8px 0 0}.ticket-choice{border:0;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}.ticket-choice legend{font-size:13px;font-weight:600;margin-bottom:8px}.ticket-choice label{border:2px solid var(--border);border-radius:8px;padding:12px;display:flex;justify-content:space-between;cursor:pointer;font-size:14px}.ticket-choice label[data-active=true]{border-color:var(--primary);background:var(--creative)}.ticket-choice input{position:absolute;opacity:0}.counter{display:flex;justify-content:space-between;align-items:center;font-size:14px}.counter div{display:flex;align-items:center;gap:12px}.counter strong{min-width:20px;text-align:center}.booking-fields{display:grid;gap:12px}.booking-fields label{display:grid;gap:5px;font-size:13px;font-weight:600}.booking-fields input,.booking-fields textarea{border:1px solid var(--border);border-radius:8px;padding:10px 12px;font:inherit;font-weight:400;background:var(--background)}.booking-total{display:flex;justify-content:space-between;align-items:center;background:var(--secondary);border-radius:8px;padding:14px}.booking-total strong{font-family:var(--font-display);font-size:30px;color:var(--primary)}.booking-error{color:var(--destructive);font-size:13px;margin:0}.booking-small{font-size:12px;color:var(--muted-foreground);margin:0}.booking-done{text-align:center;justify-items:center}.booking-done>svg{width:40px;height:40px;color:var(--leaf)}
 .contact-row{display:flex;flex-wrap:wrap;gap:18px;align-items:center}.contact-row a{display:inline-flex;gap:6px;align-items:center}.contact-row svg{width:15px}
 @media(max-width:640px){.price-grid,.ticket-layout{grid-template-columns:1fr}.price-card strong{font-size:42px}.includes-box ul{grid-template-columns:1fr}}
+
+/* Ask Bambino event helper */
+.helper-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--soft-shadow); padding: 1.25rem; display: flex; flex-direction: column; gap: .9rem; max-width: 760px; margin: 0 auto; }
+.helper-head { display: flex; align-items: center; gap: .8rem; }
+.helper-head h3 { font-family: var(--font-display); font-size: 1.35rem; margin: 0; }
+.helper-head p { margin: 0; color: var(--muted-foreground); font-size: .92rem; }
+.helper-reset { margin-left: auto; display: inline-flex; align-items: center; gap: .35rem; font-size: .85rem; color: var(--leaf); border: 1px solid var(--border); border-radius: 999px; padding: .35rem .8rem; background: var(--background); }
+.helper-reset svg { width: 14px; height: 14px; }
+.helper-log { height: 420px; background: var(--secondary); border-radius: 14px; }
+.helper-user { background: var(--leaf) !important; color: var(--hero-ink) !important; border-radius: 16px 16px 4px 16px; }
+.helper-bot { background: transparent !important; color: var(--foreground); }
+.helper-empty { text-align: center; padding: 2rem 1rem; color: var(--muted-foreground); }
+.helper-chips { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin-top: 1rem; }
+.helper-chips button { background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: .45rem .9rem; font-size: .88rem; color: var(--foreground); }
+.helper-chips button:hover { border-color: var(--primary); color: var(--primary); }
+.helper-error { color: var(--destructive); font-size: .9rem; }
+.helper-note { color: var(--muted-foreground); font-size: .8rem; text-align: center; }
