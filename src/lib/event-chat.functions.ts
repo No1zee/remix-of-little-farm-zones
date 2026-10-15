@@ -1,5 +1,4 @@
 import { createServerFn } from "@tanstack/react-start";
-import type { UIMessage } from "ai";
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -12,6 +11,6 @@ export const getEventChat = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { data: row, error } = await supabaseAdmin.from("event_chats").select("messages").eq("id", data.id).maybeSingle();
-    if (error) { console.error(error); return { messages: [] as UIMessage[] }; }
-    return { messages: ((row?.messages ?? []) as unknown as UIMessage[]) };
+    if (error) { console.error(error); return { messagesJson: "[]" }; }
+    return { messagesJson: JSON.stringify(row?.messages ?? []) };
   });

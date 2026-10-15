@@ -58,7 +58,7 @@ export function EventHelper() {
     let id = localStorage.getItem(KEY);
     if (!id) { id = crypto.randomUUID(); localStorage.setItem(KEY, id); }
     const cid = id;
-    load({ data: { id: cid } }).then(r => setState({ id: cid, messages: r.messages as UIMessage[] })).catch(() => setState({ id: cid, messages: [] }));
+    load({ data: { id: cid } }).then(r => setState({ id: cid, messages: JSON.parse(r.messagesJson) as UIMessage[] })).catch(() => setState({ id: cid, messages: [] }));
   }, [load]);
   const reset = () => { const id = crypto.randomUUID(); localStorage.setItem(KEY, id); setState({ id, messages: [] }); };
   if (!state) return <div className="helper-card"><Shimmer>Loading…</Shimmer></div>;
