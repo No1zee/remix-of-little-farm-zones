@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as TheLittleFarmRouteImport } from './routes/the-little-farm'
 import { Route as VisitRouteImport } from './routes/visit'
 import { Route as ZonesRouteImport } from './routes/zones'
+import { Route as ApiEventChatRouteImport } from './routes/api/event-chat'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +35,25 @@ const ZonesRoute = ZonesRouteImport.update({
   path: '/zones',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiEventChatRoute = ApiEventChatRouteImport.update({
+  id: '/api/event-chat',
+  path: '/api/event-chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/the-little-farm': typeof TheLittleFarmRoute
   '/visit': typeof VisitRoute
   '/zones': typeof ZonesRoute
+  '/api/event-chat': typeof ApiEventChatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/the-little-farm': typeof TheLittleFarmRoute
   '/visit': typeof VisitRoute
   '/zones': typeof ZonesRoute
+  '/api/event-chat': typeof ApiEventChatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,20 @@ export interface FileRoutesById {
   '/the-little-farm': typeof TheLittleFarmRoute
   '/visit': typeof VisitRoute
   '/zones': typeof ZonesRoute
+  '/api/event-chat': typeof ApiEventChatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/the-little-farm' | '/visit' | '/zones'
+  fullPaths: '/' | '/the-little-farm' | '/visit' | '/zones' | '/api/event-chat'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/the-little-farm' | '/visit' | '/zones'
-  id: '__root__' | '/' | '/the-little-farm' | '/visit' | '/zones'
+  to: '/' | '/the-little-farm' | '/visit' | '/zones' | '/api/event-chat'
+  id:
+    | '__root__'
+    | '/'
+    | '/the-little-farm'
+    | '/visit'
+    | '/zones'
+    | '/api/event-chat'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +82,7 @@ export interface RootRouteChildren {
   TheLittleFarmRoute: typeof TheLittleFarmRoute
   VisitRoute: typeof VisitRoute
   ZonesRoute: typeof ZonesRoute
+  ApiEventChatRoute: typeof ApiEventChatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +115,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ZonesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/event-chat': {
+      id: '/api/event-chat'
+      path: '/api/event-chat'
+      fullPath: '/api/event-chat'
+      preLoaderRoute: typeof ApiEventChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +130,7 @@ const rootRouteChildren: RootRouteChildren = {
   TheLittleFarmRoute: TheLittleFarmRoute,
   VisitRoute: VisitRoute,
   ZonesRoute: ZonesRoute,
+  ApiEventChatRoute: ApiEventChatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
