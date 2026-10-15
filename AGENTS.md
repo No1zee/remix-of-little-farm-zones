@@ -12,3 +12,5 @@
 - Use the root route for the shared BAMBINO header and footer; leaf routes own their page metadata so every destination is independently shareable.
 - Keep shared play-zone content and page elements in src/components/bambino.tsx so activities and ages remain consistent across pages.
 - Define visual styles and semantic palette in src/styles.css so all pages follow one design system.
+
+- AI event helper: facts live in src/lib/ai/event-facts.ts and the model call in a server route (/api/event-chat); update the facts whenever event details change so answers stay accurate.
