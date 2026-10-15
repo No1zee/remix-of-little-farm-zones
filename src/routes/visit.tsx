@@ -9,7 +9,7 @@ function Visit(){return <main><PageIntro eyebrow="Bambino Wonder Day · For kids
 <section className="section"><div className="info-grid">
 <article className="info-item"><CalendarHeart/><h2>Saturday 5 December 2026.</h2><p>Our very first Bambino Wonder Day — then every last Saturday of every month.</p></article>
 <article className="info-item"><Clock/><h2>10:00 am – 5:00 pm.</h2><p>Central African Time (CAT, UTC+2). A whole day of play, lunch included.</p></article>
-<article className="info-item"><MapPin/><h2>The Little Farm, Meyrick Park, Harare.</h2><p className="coordinates">17°48′33.52″S 31°00′13.85″E</p><Button asChild variant="outline" className="action-button"><a href="https://www.google.com/maps/search/?api=1&query=-17.8093111%2C31.0038472" target="_blank" rel="noopener noreferrer">Get directions <ArrowUpRight/></a></Button></article>
+<article className="info-item"><MapPin/><h2>The Little Farm, Meyrick Park.</h2><p className="venue-address">5 Richwell Ave, Mabelreign, Harare</p><p className="coordinates">17°48′33.52″S 31°00′13.85″E</p><Button asChild variant="outline" className="action-button"><a href="https://www.google.com/maps/search/?api=1&query=-17.8093111%2C31.0038472" target="_blank" rel="noopener noreferrer">Get directions <ArrowUpRight/></a></Button></article>
 </div></section>
 <section className="section" id="tickets"><div className="section-heading"><span className="eyebrow">Ticket prices</span><h2>One ticket. A whole day of magic.</h2></div>
 <div className="price-grid">{ticketPrices.map(t=><div key={t.id} className={`price-card ${t.id}`}><span>{t.label}</span><strong>${t.price}</strong><small>per child</small><em>{t.note}</em></div>)}</div>

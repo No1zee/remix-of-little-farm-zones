@@ -4,7 +4,7 @@ EVENT: Bambino Wonder Day by BAMBINO World ("Where Little Dreams Come Alive"). A
 AGES: Children 6 months to 12 years.
 DATE: First event Saturday 5 December 2026, then every last Saturday of every month.
 TIME: 10:00 am – 5:00 pm, Central African Time (CAT, UTC+2).
-VENUE: The Little Farm, Meyrick Park, Harare, Zimbabwe. Coordinates 17°48'33.52"S 31°00'13.85"E. Directions: https://www.google.com/maps/search/?api=1&query=-17.8093111%2C31.0038472
+VENUE: The Little Farm, Meyrick Park, 5 Richwell Ave, Mabelreign, Harare, Zimbabwe. Coordinates 17°48'33.52"S 31°00'13.85"E. Directions: https://www.google.com/maps/search/?api=1&query=-17.8093111%2C31.0038472
 Venue layout: registration at the entrance, a parents' lounge, separate vehicle exit and staff parking. Ponds are fenced and supervised. The swimming pool is securely fenced off and is NOT an activity.
 
 TICKETS (per child, lunch included):
