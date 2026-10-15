@@ -14,7 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      ticket_bookings: {
+        Row: {
+          children: number
+          created_at: string
+          email: string | null
+          estimated_total: number
+          event_date: string
+          id: string
+          notes: string | null
+          parent_name: string
+          phone: string
+          ticket_type: string
+          under_twos: number
+        }
+        Insert: {
+          children: number
+          created_at?: string
+          email?: string | null
+          estimated_total: number
+          event_date: string
+          id?: string
+          notes?: string | null
+          parent_name: string
+          phone: string
+          ticket_type: string
+          under_twos?: number
+        }
+        Update: {
+          children?: number
+          created_at?: string
+          email?: string | null
+          estimated_total?: number
+          event_date?: string
+          id?: string
+          notes?: string | null
+          parent_name?: string
+          phone?: string
+          ticket_type?: string
+          under_twos?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
