@@ -8,4 +8,5 @@
 - [x] Add the additional Zone 2 Adventure World image.
 - [x] Add the uploaded Creative Zone setup to Creative Zone.
 - [x] Add the uploaded Discovery World setup to Discovery World.
-- [x] Publish the opening date, start time and monthly schedule on Plan Your Visit.
+- [x] Publish the opening date, start time and monthly schedule on Plan Your Visit.- [ ] Add ticket prices, flyer details and an online booking flow to Plan Your Visit.
+- [ ] Redesign the Bambino Wonder Day flyer with all its details.
