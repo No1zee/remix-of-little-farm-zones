@@ -10,3 +10,6 @@
 - [x] Add the uploaded Discovery World setup to Discovery World.
 - [x] Publish the opening date, start time and monthly schedule on Plan Your Visit.- [ ] Add ticket prices, flyer details and an online booking flow to Plan Your Visit.
 - [x] Redesign the Bambino Wonder Day flyer with all its details.
+
+- [x] Add the venue street address (5 Richwell Ave, Mabelreign).
+- [ ] Online payment in the booking form (waiting on payment provider choice).

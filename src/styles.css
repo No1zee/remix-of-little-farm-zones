@@ -77,3 +77,4 @@
 .helper-chips button:hover { border-color: var(--primary); color: var(--primary); }
 .helper-error { color: var(--destructive); font-size: .9rem; }
 .helper-note { color: var(--muted-foreground); font-size: .8rem; text-align: center; }
+.venue-address { font-weight: 600; margin: .2rem 0; }
