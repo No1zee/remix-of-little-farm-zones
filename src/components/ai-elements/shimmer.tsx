@@ -47,9 +47,9 @@ const ShimmerComponent = ({
     [children, spread]
   );
 
-  // @ts-expect-error motion style typing under exactOptionalPropertyTypes
   return (
     <MotionComponent
+      // @ts-expect-error motion style typing under exactOptionalPropertyTypes
       animate={{ backgroundPosition: "0% center" }}
       className={cn(
         "relative inline-block bg-[length:250%_100%,auto] bg-clip-text text-transparent",
