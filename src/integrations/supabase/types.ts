@@ -14,6 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
+      event_chats: {
+        Row: {
+          created_at: string
+          id: string
+          messages: Json
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          messages?: Json
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          messages?: Json
+          updated_at?: string
+        }
+        Relationships: []
+      }
       ticket_bookings: {
         Row: {
           children: number
