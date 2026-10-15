@@ -12,5 +12,5 @@
 - [x] Redesign the Bambino Wonder Day flyer with all its details.
 
 - [x] Add the venue street address (5 Richwell Ave, Mabelreign).
-- [ ] Online payment in the booking form: EcoCash to 0779140417 with transaction reference.
-- [ ] Add 0779140417 to contact details.
+- [x] Online payment in the booking form: EcoCash to 0779140417 with transaction reference.
+- [x] Add 0779140417 to contact details.

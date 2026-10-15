@@ -36,6 +36,8 @@ export function BookingForm() {
   const [underTwos, setUnderTwos] = useState(0);
   const [form, setForm] = useState({ parent_name: '', phone: '', email: '', notes: '' });
   const [error, setError] = useState('');
+  const [pay, setPay] = useState<'ecocash' | 'pay_later'>('ecocash');
+  const [eco, setEco] = useState({ ref: '', from: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'done'>('idle');
   const base = ticketPrices.find(t => t.id === type)!.price;
   const total = estimateTotal(base, children);
@@ -44,16 +46,18 @@ export function BookingForm() {
     e.preventDefault(); setError('');
     const parsed = schema.safeParse(form);
     if (!parsed.success) { setError(parsed.error.issues[0]?.message ?? "Please check the form"); return; }
+    if (pay === 'ecocash' && eco.ref.trim().length < 4) { setError('Please enter the EcoCash transaction reference from your confirmation SMS.'); return; }
     setStatus('sending');
     const { error: dbError } = await supabase.from('ticket_bookings').insert({
       event_date: '2026-12-05', ticket_type: type, children, under_twos: underTwos, estimated_total: total,
       parent_name: parsed.data.parent_name, phone: parsed.data.phone, email: parsed.data.email || null, notes: parsed.data.notes || null,
+      payment_method: pay, ecocash_reference: pay === 'ecocash' ? eco.ref.trim().slice(0, 60) : null, ecocash_payer_number: pay === 'ecocash' ? (eco.from.trim().slice(0, 30) || null) : null,
     });
     if (dbError) { setStatus('idle'); setError('Something went wrong sending your booking. Please try again or call us.'); return; }
     setStatus('done');
   }
 
-  if (status === 'done') return <div className="booking-card booking-done"><Check /><h3>You’re on the list!</h3><p>We’ve received your booking for Bambino Wonder Day — {children} {children === 1 ? 'child' : 'children'}{underTwos ? ` + ${underTwos} under 2` : ''}, estimated ${total}. We’ll contact you on {form.phone} to confirm and arrange payment.</p></div>;
+  if (status === 'done') return <div className="booking-card booking-done"><Check /><h3>You’re on the list!</h3><p>We’ve received your booking for Bambino Wonder Day — {children} {children === 1 ? 'child' : 'children'}{underTwos ? ` + ${underTwos} under 2` : ''}, estimated ${total}. {pay === 'ecocash' ? `We’ll check your EcoCash payment (ref ${eco.ref.trim()}) and confirm on ${form.phone}.` : `We’ll contact you on ${form.phone} to confirm and arrange payment.`}</p></div>;
 
   return <form className="booking-card" onSubmit={submit} noValidate>
     <h3><Ticket /> Book your tickets</h3>
@@ -68,8 +72,19 @@ export function BookingForm() {
       <label>Anything we should know? (optional)<textarea value={form.notes} maxLength={500} rows={2} onChange={e => setForm({ ...form, notes: e.target.value })} /></label>
     </div>
     <div className="booking-total"><span>Estimated total</span><strong>${total}</strong></div>
+    <fieldset className="ticket-choice pay-choice"><legend>How would you like to pay?</legend>
+      <label data-active={pay === 'ecocash'}><input type="radio" name="pay" checked={pay === 'ecocash'} onChange={() => setPay('ecocash')} /><span>Pay now with EcoCash</span></label>
+      <label data-active={pay === 'pay_later'}><input type="radio" name="pay" checked={pay === 'pay_later'} onChange={() => setPay('pay_later')} /><span>Pay later</span></label>
+    </fieldset>
+    {pay === 'ecocash' && <div className="ecocash-box">
+      <ol><li>Send <strong>${total}</strong> by EcoCash to <strong>0779 140 417</strong> (dial *151# → Send Money).</li><li>Enter the transaction reference from your confirmation SMS below.</li></ol>
+      <div className="booking-fields">
+        <label>EcoCash transaction reference<input value={eco.ref} maxLength={60} onChange={e => setEco({ ...eco, ref: e.target.value })} placeholder="e.g. MP261205.1234.A12345" /></label>
+        <label>Number you paid from (optional)<input value={eco.from} maxLength={30} inputMode="tel" onChange={e => setEco({ ...eco, from: e.target.value })} placeholder="07…" /></label>
+      </div>
+    </div>}
     {error && <p className="booking-error" role="alert">{error}</p>}
-    <Button type="submit" className="action-button" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : 'Request my tickets'}</Button>
-    <p className="booking-small">No payment is taken online. We’ll call or WhatsApp you to confirm your tickets and payment.</p>
+    <Button type="submit" className="action-button" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : pay === 'ecocash' ? 'Confirm booking & payment' : 'Request my tickets'}</Button>
+    <p className="booking-small">{pay === 'ecocash' ? 'Your tickets are confirmed once we’ve matched your EcoCash payment — we’ll message you.' : 'We’ll call or WhatsApp you to confirm your tickets and arrange payment.'}</p>
   </form>;
 }
