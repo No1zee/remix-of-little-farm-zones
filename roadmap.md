@@ -14,3 +14,5 @@
 - [x] Add the venue street address (5 Richwell Ave, Mabelreign).
 - [x] Online payment in the booking form: EcoCash to 0779140417 with transaction reference.
 - [x] Add 0779140417 to contact details.
+- [ ] Build the 5 December event page with a proposed schedule for all five zones and a family day planner.
+- [ ] Add organizer EcoCash confirmation and family booking status. Blocked pending organizer access choice from the previous request.

@@ -14,3 +14,4 @@
 - Define visual styles and semantic palette in src/styles.css so all pages follow one design system.
 
 - AI event helper: facts live in src/lib/ai/event-facts.ts and the model call in a server route (/api/event-chat); update the facts whenever event details change so answers stay accurate.
+- Keep event programme timing and draft status in src/lib/event-programme.ts, shared by the event page and AI facts; zone identity and setup imagery remain in the shared BAMBINO module to prevent drift.
