@@ -16,14 +16,14 @@ export const zones = [
  { name: 'Celebration Stage', tone: 'stage', age: 'Everyone together', icon: Music2, description: 'A place to shine, sing and celebrate. The happy heart of our world.', activities: ['Live performances', 'Music', 'Group announcements'], area: 400 },
 ];
 export function Brand() { return <Link to="/" className="brand" aria-label="BAMBINO World home"><span className="brand-name">{'BAMBINO'.split('').map((letter, i) => <span key={i}>{letter}</span>)}</span><span className="brand-world">WORLD</span></Link>; }
-const navigation = [{to:'/',label:'Home'},{to:'/zones',label:'Our Play Zones'},{to:'/the-little-farm',label:'The Little Farm'},{to:'/visit',label:'Plan Your Visit'}] as const;
+const navigation = [{to:'/',label:'Home'},{to:'/december-5',label:'5 December Event'},{to:'/zones',label:'Our Play Zones'},{to:'/the-little-farm',label:'The Little Farm'},{to:'/visit',label:'Plan Your Visit'}] as const;
 export function Header() {
  const [open,setOpen] = useState(false); const path = useRouterState({select:s=>s.location.pathname});
  return <><header className="site-header"><Brand/><nav className="desktop-nav" aria-label="Main navigation">{navigation.map(n=><Link key={n.to} to={n.to} className="nav-link" data-active={path===n.to}>{n.label}</Link>)}</nav><Button asChild className="action-button header-visit"><Link to="/visit">Let’s make memories <ArrowRight/></Link></Button><Button variant="ghost" size="icon" className="menu-trigger" aria-label={open?'Close menu':'Open menu'} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</Button></header>{open&&<nav className="mobile-nav" aria-label="Mobile navigation">{navigation.map(n=><Link key={n.to} to={n.to} className="nav-link" data-active={path===n.to} onClick={()=>setOpen(false)}>{n.label}</Link>)}</nav>}</>;
 }
 export function Footer(){return <footer className="footer"><Brand/><p>© {new Date().getFullYear()} BAMBINO World. Little moments. Lifelong memories.</p><nav className="footer-links" aria-label="Footer navigation"><Link to="/zones">Our Play Zones</Link><Link to="/the-little-farm">The Little Farm</Link><Link to="/visit">Plan Your Visit</Link></nav></footer>}
 type ZoneVision = { src: string; w: number; h: number; portrait?: boolean };
-const setupImages: Record<string, ZoneVision> = {
+export const setupImages: Record<string, ZoneVision> = {
  baby: { src: babyGarden.url, w: 1024, h: 572 },
  adventure: { src: adventureZone.url, w: 1024, h: 572 },
  creative: { src: creativeZone.url, w: 572, h: 1024, portrait: true },
