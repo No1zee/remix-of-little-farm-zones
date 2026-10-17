@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as December5RouteImport } from './routes/december-5'
 import { Route as TheLittleFarmRouteImport } from './routes/the-little-farm'
 import { Route as VisitRouteImport } from './routes/visit'
 import { Route as ZonesRouteImport } from './routes/zones'
@@ -18,6 +19,11 @@ import { Route as ApiEventChatRouteImport } from './routes/api/event-chat'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const December5Route = December5RouteImport.update({
+  id: '/december-5',
+  path: '/december-5',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TheLittleFarmRoute = TheLittleFarmRouteImport.update({
@@ -43,6 +49,7 @@ const ApiEventChatRoute = ApiEventChatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/december-5': typeof December5Route
   '/the-little-farm': typeof TheLittleFarmRoute
   '/visit': typeof VisitRoute
   '/zones': typeof ZonesRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/december-5': typeof December5Route
   '/the-little-farm': typeof TheLittleFarmRoute
   '/visit': typeof VisitRoute
   '/zones': typeof ZonesRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/december-5': typeof December5Route
   '/the-little-farm': typeof TheLittleFarmRoute
   '/visit': typeof VisitRoute
   '/zones': typeof ZonesRoute
@@ -65,12 +74,25 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/the-little-farm' | '/visit' | '/zones' | '/api/event-chat'
+  fullPaths:
+    | '/'
+    | '/december-5'
+    | '/the-little-farm'
+    | '/visit'
+    | '/zones'
+    | '/api/event-chat'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/the-little-farm' | '/visit' | '/zones' | '/api/event-chat'
+  to:
+    | '/'
+    | '/december-5'
+    | '/the-little-farm'
+    | '/visit'
+    | '/zones'
+    | '/api/event-chat'
   id:
     | '__root__'
     | '/'
+    | '/december-5'
     | '/the-little-farm'
     | '/visit'
     | '/zones'
@@ -79,6 +101,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  December5Route: typeof December5Route
   TheLittleFarmRoute: typeof TheLittleFarmRoute
   VisitRoute: typeof VisitRoute
   ZonesRoute: typeof ZonesRoute
@@ -92,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/december-5': {
+      id: '/december-5'
+      path: '/december-5'
+      fullPath: '/december-5'
+      preLoaderRoute: typeof December5RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/the-little-farm': {
@@ -127,6 +157,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  December5Route: December5Route,
   TheLittleFarmRoute: TheLittleFarmRoute,
   VisitRoute: VisitRoute,
   ZonesRoute: ZonesRoute,
