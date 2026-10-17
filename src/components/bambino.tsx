@@ -5,6 +5,7 @@ import babyGarden from '@/assets/baby-garden.asset.json';
 import adventureZone from '@/assets/adventure-world.asset.json';
 import creativeZone from '@/assets/creative-zone.jpeg.asset.json';
 import discoveryWorld from '@/assets/discovery-world.jpeg.asset.json';
+import celebrationStage from '@/assets/celebration-stage.jpeg.asset.json';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
@@ -28,6 +29,7 @@ export const setupImages: Record<string, ZoneVision> = {
  adventure: { src: adventureZone.url, w: 1024, h: 572 },
  creative: { src: creativeZone.url, w: 572, h: 1024, portrait: true },
  discovery: { src: discoveryWorld.url, w: 1280, h: 853 },
+  stage: { src: celebrationStage.url, w: 1408, h: 768 },
 };
 export function ZoneCollection(){
  const [selected,setSelected] = useState<(typeof zones)[number] | null>(null);

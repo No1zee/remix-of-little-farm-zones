@@ -16,4 +16,5 @@
 - [x] Online payment in the booking form: EcoCash to 0779140417 with transaction reference.
 - [x] Add 0779140417 to contact details.
 - [x] Build the 5 December event page with a proposed schedule for all five zones and a family day planner.
+- [x] Add the uploaded Celebration Stage setup across the zone collection and December event page.
 - [ ] Add organizer EcoCash confirmation and family booking status. Blocked pending organizer access choice from the previous request.
