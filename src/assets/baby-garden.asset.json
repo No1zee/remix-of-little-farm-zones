@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "0f01b87a-8ea1-4505-b8fe-fdcfc9b2d775",
-  "project_id": "e5e01bbc-98b1-4c20-8931-07a6e626fd02",
-  "url": "/__l5e/assets-v1/0f01b87a-8ea1-4505-b8fe-fdcfc9b2d775/baby-garden-vision.jpeg",
-  "r2_key": "a/v1/e5e01bbc-98b1-4c20-8931-07a6e626fd02/0f01b87a-8ea1-4505-b8fe-fdcfc9b2d775/baby-garden-vision.jpeg",
-  "original_filename": "baby-garden-vision.jpeg",
-  "size": 249937,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-14T23:14:49Z"
+  "created_at": "2026-10-14T23:14:49Z",
+  "original_filename": "baby-garden-vision.jpeg",
+  "project_id": "acdedc89-5915-4c2a-8bd7-03c0c620ae0c",
+  "r2_key": "a/v1/acdedc89-5915-4c2a-8bd7-03c0c620ae0c/0f01b87a-8ea1-4505-b8fe-fdcfc9b2d775/baby-garden-vision.jpeg",
+  "size": 249937,
+  "url": "/__l5e/assets-v1/0f01b87a-8ea1-4505-b8fe-fdcfc9b2d775/baby-garden-vision.jpeg",
+  "version": 1
 }

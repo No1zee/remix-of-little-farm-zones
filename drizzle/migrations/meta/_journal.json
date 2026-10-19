@@ -1,34 +1,5 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": [
-    {
-      "idx": 0,
-      "version": "7",
-      "when": 1792024859965,
-      "tag": "0000_migration",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1792026347766,
-      "tag": "0001_event_questions_chat",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1792031621340,
-      "tag": "0002_booking_payments",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1792031644811,
-      "tag": "0003_ecocash_reference",
-      "breakpoints": true
-    }
-  ]
+  "entries": []
 }
